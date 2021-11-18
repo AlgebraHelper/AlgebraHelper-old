@@ -1,90 +1,36 @@
-<!DOCTYPE HTML>
-<html lang="en">
-    <head>
-        <title>AlgebraHelper</title>
-        <link rel="apple-touch-icon-precomposed" href="data/img/touch-icon-iphone.png"/>
-        <link rel="apple-touch-icon-precomposed" sizes="120x120" href="data/img/touch-icon-iphone-retina.png"/>
-        <link rel="shortcut icon" href="data/img/favicon.ico">
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="icon" href="../../assets/img/brokencalculator.png" type="image/x-icon">
-        <link rel="stylesheet" type="text/css" media="screen" href="index.css">
-        <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <meta name="apple-mobile-web-app-title" content="Clumsy Bird">
-        <meta charset="UTF-8" />
-        <meta name="description" content="Clumsy Bird - A Flappy Bird clone using MelonJS"/>
-        <meta name="keywords" content="flappybird, flappy, bird, game, html5, melonjs,clone"/>
-        <meta name="robots" content="index, follow">
-        <meta name="google-site-verification" content="RDZI9SqVaffd48uHfZMv67-YdvviOMe2HuULEYqVgd4" />
-        <meta property="og:image" content="http://ellisonleao.github.io/clumsy-bird/data/img/bg.png" />
-        <meta property="og:title" content="Clumsy Bird - A Flappy Bird clone using MelonJS"/>
-        <meta property="og:url" content="http://ellisonleao.github.io/clumsy-bird/"/>
-        <meta property="og:site_name" content="Clumsy Bird - MelonJS"/>
-
-        <style>
-          body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
-          .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
-          .fa-anchor,.fa-coffee {font-size:200px}
-        </style>
-
-        <!-- Twitter Card -->
-        <meta name="twitter:hashtag" content="clumsybird" />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="@ellisonleao" />
-        <meta name="twitter:creator" content="@ellisonleao" />
-        <meta name="twitter:title" content="Clumsy Bird" />
-        <meta name="twitter:description" content="A Flappy Bird melonJS clone" />
-
-        <!-- Humans -->
-        <link rel="author" href="humans.txt" />
-
-    </head>
-
-    <body>
-        <!-- Canvas placeholder -->
-        <div id="screen"></div>
-
-        <!-- melonJS Library -->
-        <script type="text/javascript" src="js/melonJS-min.js" ></script>
-        <script type="text/javascript" src="build/clumsy-min.js" ></script>
-        <script type="text/javascript">
-            window.onReady(function onReady() {
-                game.onload();
-            });
-        </script>
-
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LW2C490S7E"></script>
+<!doctype html>
+<html>
+<head>
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no' />
+    <meta charset='utf-8'>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <style></style>
+    <title>Flappy Bird</title>
+    <script src="playcanvas-stable.min.js"></script>
     <script>
-       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-LW2C490S7E');
+        ASSET_PREFIX = "";
+        SCRIPT_PREFIX = "";
+        SCENE_PATH = "404993.json";
+        CONTEXT_OPTIONS = {
+            'antialias': true,
+            'alpha': false,
+            'preserveDrawingBuffer': false,
+            'preferWebGl2': true
+        };
+        SCRIPTS = [ 4554272, 4554207, 4554209, 4554213, 4554214, 4554217, 4554219, 4554270, 4554271, 4554273, 4554276, 4554277, 4554279, 4554281, 4831197 ];
+        CONFIG_FILENAME = "config.json";
+        INPUT_SETTINGS = {
+            useKeyboard: true,
+            useMouse: true,
+            useGamepads: false,
+            useTouch: true
+        };
+        pc.script.legacy = false;
     </script>
-
-         <!-- Navbar -->
-    <div class="w3-top">
-        <div class="w3-bar w3-black w3-card w3-left-align w3-large">
-          <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-          <a href="../../index.html" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
-          <a href="../../games/games.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Games</a>
-          <a href="../../sites/sites.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Sites</a>
-          <a href="../../about.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">About</a>
-        </div>
-  
-        <!-- Navbar on small screens -->
-        <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
-          <a href="../../games/games.html" class="w3-bar-item w3-button w3-padding-large">Games</a>
-          <a href="../../sites/sites.html" class="w3-bar-item w3-button w3-padding-large">Sites</a>
-          <a href="../../about.html" class="w3-bar-item w3-button w3-padding-large">About</a>
-        </div>
-        
-      </div>
-
-    </body>
+</head>
+<body>
+    <script src="__start__.js"></script>
+    <script src="__loading__.js"></script>
+</body>
 </html>
